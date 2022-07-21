@@ -13,11 +13,14 @@ Observable1.subscribe(B => {
  Fix 1: ```mergeMap()```
  Real case => Get params then get the blog, **this.blogs$ IS USED WITH ASYNC PIPE IN TEMPLATE**
    ```ts
-   this.route.params
-      .pipe(
-        mergeMap(
-          (params) => (this.blog$ = this.blogService.getBlogById(params.newsId))
-        )
-      )
-   .subscribe();
+    this.params$ = this.route.params.pipe(
+      mergeMap((params) => {
+        return this.blogService.getBlogById(params.newsId).pipe(
+          mergeMap((blog: IBlog) => {
+            this.blog = blog;
+            return this.blogService.getRelatedNews(blog.tags);
+          })
+        );
+      })
+    );
    ```
