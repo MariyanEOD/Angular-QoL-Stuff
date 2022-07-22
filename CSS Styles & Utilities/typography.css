@@ -1,0 +1,12 @@
+.fs-sm-responsive {
+   font-size: calc(13px + 0.390625vw);
+}
+.fs-responsive {
+   font-size: calc(15px + 0.390625vw);
+}
+.fs-big-responsive {
+   font-size: calc(18px + 0.390625vw);
+}
+.fs-xl-responsive {
+   font-size: calc(21px + 0.390625vw);
+}
