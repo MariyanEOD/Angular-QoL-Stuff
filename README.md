@@ -24,3 +24,6 @@ Observable1.subscribe(B => {
       })
     );
    ```
+
+Neat CSS Cards
+https://www.sliderrevolution.com/resources/css-cards/
