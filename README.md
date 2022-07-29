@@ -28,6 +28,22 @@ Observable1.subscribe(B => {
 
 ## **Search function with FormGroup && FormArray** ##
 
+
+
+Working order
+1. Subscribe to search form control valueChanges 
+2. Start with empty string
+3. Add 300 seconds delay, so it does not lag
+4. SwitchMap which will return another observable
+5. Pass formControls to `of()` observable
+6. `of()` will map once the array 
+7. In map function, formArr will be filtered
+8. Each `formGroup` will be checked if X property includes the `searchString`
+9. if it is included, returns it, otherwise do not return it
+
+
+
+
 component.ts
 ```ts
   form: FormGroup;
@@ -47,6 +63,7 @@ component.ts
         })
       ),
     });
+
 
      this.searchResults$ = this.search.valueChanges.pipe(
       tap((x) => console.log(x)),
