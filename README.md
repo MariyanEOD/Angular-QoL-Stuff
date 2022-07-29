@@ -103,4 +103,7 @@ template.html
 Neat CSS Cards
 https://www.sliderrevolution.com/resources/css-cards/
 
+##** Passing a callback to another component
 
+```- callback(..args) { return console.log(args) }```
+```+ callback = (..args) => console.log(args)```
