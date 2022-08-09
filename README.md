@@ -107,3 +107,7 @@ https://www.sliderrevolution.com/resources/css-cards/
 
 ```- callback(..args) { return console.log(args) }```
 ```+ callback = (..args) => console.log(args)```
+
+# Regex
+
+`/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
