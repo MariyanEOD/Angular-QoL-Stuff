@@ -49,8 +49,11 @@ component.ts
   form: FormGroup;
   search = new FormControl();
   searchProperty = 'name';
+  searchKeys = ['name', 'surname', 'email']
   searchResults$: Observable<any>;
-  
+    get f() {
+    return this.form.get('FORM_ARRAY_NAME') as FormArray;
+  }
     get fcontrols() {
     return this.f.controls as FormGroup[];
     }
@@ -58,7 +61,7 @@ component.ts
     ngOnInit() { 
         this.form = this.fb.group({
           FORM_ARRAY_NAME: this.fb.array(
-            this.users.map((x, i) => {
+            this.YOUR_ARRAY_DATA.map((x, i) => {
              return this.fb.group(x);
         })
       ),
@@ -73,6 +76,15 @@ component.ts
         return of(this.fcontrols as AbstractControl[]).pipe(
           map((formArr: AbstractControl[]) =>
             formArr.filter((group: AbstractControl) => {
+            /* Multi-key searching
+         for (const key of this.searchKeys) {
+                if (
+                  group.get(key).value.toLowerCase().includes(val.toLowerCase())
+                ) {
+                  return group;
+                }
+              }
+              */
               console.log(this.searchProperty);
               return group
                 .get(this.searchProperty) // A simple string: name | email | phone
@@ -104,6 +116,10 @@ Neat CSS Cards
 https://www.sliderrevolution.com/resources/css-cards/
 
 ##** Passing a callback to another component
+```diff
+- callback(..args) { return console.log(args) }
++ callback = (..args) => console.log(args)
+```
+# Regex
 
-```- callback(..args) { return console.log(args) }```
-```+ callback = (..args) => console.log(args)```
+`/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
