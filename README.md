@@ -49,6 +49,7 @@ component.ts
   form: FormGroup;
   search = new FormControl();
   searchProperty = 'name';
+  searchKeys = ['name', 'surname', 'email']
   searchResults$: Observable<any>;
     get f() {
     return this.form.get('FORM_ARRAY_NAME') as FormArray;
@@ -75,6 +76,15 @@ component.ts
         return of(this.fcontrols as AbstractControl[]).pipe(
           map((formArr: AbstractControl[]) =>
             formArr.filter((group: AbstractControl) => {
+            /* Multi-key searching
+         for (const key of this.searchKeys) {
+                if (
+                  group.get(key).value.toLowerCase().includes(val.toLowerCase())
+                ) {
+                  return group;
+                }
+              }
+              */
               console.log(this.searchProperty);
               return group
                 .get(this.searchProperty) // A simple string: name | email | phone
