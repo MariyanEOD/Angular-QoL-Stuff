@@ -50,7 +50,9 @@ component.ts
   search = new FormControl();
   searchProperty = 'name';
   searchResults$: Observable<any>;
-  
+    get f() {
+    return this.form.get('FORM_ARRAY_NAME') as FormArray;
+  }
     get fcontrols() {
     return this.f.controls as FormGroup[];
     }
@@ -58,7 +60,7 @@ component.ts
     ngOnInit() { 
         this.form = this.fb.group({
           FORM_ARRAY_NAME: this.fb.array(
-            this.users.map((x, i) => {
+            this.YOUR_ARRAY_DATA.map((x, i) => {
              return this.fb.group(x);
         })
       ),
