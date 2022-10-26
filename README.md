@@ -114,6 +114,8 @@ template.html
 ```
 Neat CSS Cards
 https://www.sliderrevolution.com/resources/css-cards/
+https://alvarotrigo.com/blog/javascript-menus/
+https://blog.hubspot.com/website/css-animation-examples
 
 ##** Passing a callback to another component
 ```diff
