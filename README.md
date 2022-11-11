@@ -1,3 +1,15 @@
+# Git commands
+1. Merging a newer branch into old while accepting the Incoming Changes
+```
+git checkout --theirs .
+git add .
+```
+2. Mergin a newer branch into old while accepting Current Changes
+```
+git checkout --ours .
+git add .
+```
+
 # Angular-QoL-Stuff
 Animations, CSS&amp;HTML Templates and stuff
 
