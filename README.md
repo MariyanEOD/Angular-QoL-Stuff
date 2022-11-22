@@ -10,6 +10,10 @@ git checkout --ours .
 git add .
 ```
 
+# Spinners
+
+https://loading.io/css/
+
 # Angular-QoL-Stuff
 Animations, CSS&amp;HTML Templates and stuff
 
