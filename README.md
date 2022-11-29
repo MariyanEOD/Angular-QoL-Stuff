@@ -1,3 +1,34 @@
+# Android QoL code snippets
+
+1. Text zoom disable
+```java
+<!-- MainActivity.java -->
+import com.getcapacitor.BridgeActivity;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+public class MainActivity extends BridgeActivity {
+  public void onResume() {
+    super.onResume();
+    WebSettings settings = bridge.getWebView().getSettings();
+    settings.setTextZoom(1000);
+    settings.setSupportZoom(false);
+  }
+}
+```
+2. Native Dark Mode disable
+```java
+import com.getcapacitor.BridgeActivity;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+public class MainActivity extends BridgeActivity {
+  public void onResume() {
+    super.onResume();
+    WebSettings settings = bridge.getWebView().getSettings();
+    settings.setForceDark(WebSettings.FORCE_DARK_OFF);
+  }
+}
+```
+
 # Angular-animatinos QoL library
 https://github.com/filipows/angular-animations
 
