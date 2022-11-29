@@ -1,3 +1,7 @@
+# Angular-animatinos QoL library
+https://github.com/filipows/angular-animations
+
+
 # Git commands
 1. Merging a newer branch into old while accepting the Incoming Changes
 ```
