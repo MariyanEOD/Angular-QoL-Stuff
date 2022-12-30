@@ -176,3 +176,6 @@ https://blog.hubspot.com/website/css-animation-examples
 # Regex
 
 `/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
+
+`[0-9]+` => Find all numbers in file
+`'(.*);` => Find all text between ' and '
