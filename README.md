@@ -1,3 +1,42 @@
+# Android QoL code snippets
+
+# concatMap vs switchMap vs mergeMap vs exhaustMap
+
+https://offering.solutions/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/
+
+1. Text zoom disable
+```java
+<!-- MainActivity.java -->
+import com.getcapacitor.BridgeActivity;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+public class MainActivity extends BridgeActivity {
+  public void onResume() {
+    super.onResume();
+    WebSettings settings = bridge.getWebView().getSettings();
+    settings.setTextZoom(1000);
+    settings.setSupportZoom(false);
+  }
+}
+```
+2. Native Dark Mode disable
+```java
+import com.getcapacitor.BridgeActivity;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+public class MainActivity extends BridgeActivity {
+  public void onResume() {
+    super.onResume();
+    WebSettings settings = bridge.getWebView().getSettings();
+    settings.setForceDark(WebSettings.FORCE_DARK_OFF);
+  }
+}
+```
+
+# Angular-animatinos QoL library
+https://github.com/filipows/angular-animations
+
+
 # Git commands
 1. Merging a newer branch into old while accepting the Incoming Changes
 ```
@@ -9,6 +48,10 @@ git add .
 git checkout --ours .
 git add .
 ```
+
+# Spinners
+
+https://loading.io/css/
 
 # Angular-QoL-Stuff
 Animations, CSS&amp;HTML Templates and stuff
@@ -137,3 +180,6 @@ https://blog.hubspot.com/website/css-animation-examples
 # Regex
 
 `/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
+
+`[0-9]+` => Find all numbers in file
+`'(.*);` => Find all text between ' and '
