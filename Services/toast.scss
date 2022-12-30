@@ -1,0 +1,21 @@
+ion-toast.toast-success {
+  --background: rgb(1, 156, 1);
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 15px;
+  font-size: 14px;
+}
+ion-toast.toast-error {
+  --background: rgb(156, 1, 1);
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 15px;
+  font-size: 14px;
+}
+ion-toast.toast-regular {
+  --background: #2b8ae8;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: white;
+  --border-radius: 15px;
+  font-size: 14px;
+}
