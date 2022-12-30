@@ -1,5 +1,9 @@
 # Android QoL code snippets
 
+# concatMap vs switchMap vs mergeMap vs exhaustMap
+
+https://offering.solutions/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/
+
 1. Text zoom disable
 ```java
 <!-- MainActivity.java -->
