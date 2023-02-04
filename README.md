@@ -1,5 +1,9 @@
 # Android QoL code snippets
 
+# Folder structure examples
+https://github.com/mdali602/angular-folder-structure
+
+
 # concatMap vs switchMap vs mergeMap vs exhaustMap
 
 https://offering.solutions/blog/articles/2021/03/08/switchmap-mergemap-concatmap-exhaustmap-explained/
