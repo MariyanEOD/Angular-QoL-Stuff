@@ -187,3 +187,4 @@ https://blog.hubspot.com/website/css-animation-examples
 
 `[0-9]+` => Find all numbers in file
 `'(.*);` => Find all text between ' and '
+`console\.log\(([^)]+)\);` console.log regex
