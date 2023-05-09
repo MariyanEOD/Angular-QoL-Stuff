@@ -1,0 +1,4 @@
+<ion-button [disabled]="disabled || loading" type="submit" class="w-full">
+  <span *ngIf="!loading">{{ label }}</span>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+</ion-button>

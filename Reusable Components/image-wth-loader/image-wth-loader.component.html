@@ -1,0 +1,14 @@
+<div>
+  <custom-skeleton
+    class="w-full h-full z-30 absolute top-0"
+    [@fadeOut]
+    *ngIf="!isloaded"
+  ></custom-skeleton>
+  <img
+    [ngSrc]="src"
+    #imgEl
+    fill
+    [loading]="'lazy'"
+    class="z-10 transition-all duration-500 object-cover"
+  />
+</div>

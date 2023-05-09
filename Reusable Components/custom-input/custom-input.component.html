@@ -1,0 +1,78 @@
+<div class="relative">
+  <div class="flex items-center rounded-lg border border-slate-200">
+    <input
+      *ngIf="control"
+      [formControl]="control"
+      [type]="
+        type === 'password' && !showPassword
+          ? 'password'
+          : type === 'password' && showPassword
+          ? 'text'
+          : type
+      "
+      [id]="'floating_outlined-' + id"
+      class="peer block w-full appearance-none rounded-lg bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-black focus:outline-none focus:ring-0 disabled:text-gray-500/80"
+      placeholder=" "
+    />
+    <input
+      *ngIf="!control"
+      [value]="staticValue"
+      [type]="
+        type === 'password' && !showPassword
+          ? 'password'
+          : type === 'password' && showPassword
+          ? 'text'
+          : type
+      "
+      [disabled]="disabled"
+      [id]="'floating_outlined-' + id"
+      class="peer block w-full appearance-none rounded-lg bg-transparent px-2.5 pb-2.5 pt-4 text-sm text-black focus:outline-none focus:ring-0 disabled:text-gray-500/80"
+      placeholder=" "
+    />
+    <label
+      [for]="'floating_outlined-' + id"
+      class="peer-focus: absolute left-1 top-2 z-10 origin-[0] -translate-y-4 scale-75 transform bg-white px-2 text-sm text-gray-400 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:px-2 peer-focus:text-black"
+      >{{ label }}</label
+    >
+
+    <i
+      @fadeIn
+      class="mx-2"
+      *ngIf="type === 'password' && !showPassword"
+      (click)="showPassword = !showPassword"
+    >
+      <span
+        class="iconify text-gray-400"
+        data-icon="ph:eye-thin"
+        data-width="24"
+        data-height="24"
+      ></span>
+    </i>
+    <i
+      @fadeIn
+      class="mx-2"
+      *ngIf="type === 'password' && showPassword"
+      (click)="showPassword = !showPassword"
+    >
+      <span
+        class="iconify text-gray-400"
+        data-icon="ph:eye-slash-thin"
+        data-width="24"
+        data-height="24"
+      ></span>
+    </i>
+  </div>
+</div>
+
+<span
+  @fadeIn
+  class="my-1 ps-1 text-xs text-red-500"
+  *ngIf="control.touched && control.errors?.['required']"
+  >This field is required.</span
+>
+<span
+  @fadeIn
+  class="my-1 ps-1 text-xs text-red-500"
+  *ngIf="control.touched && control.errors?.['email']"
+  >The email is not valid.</span
+>

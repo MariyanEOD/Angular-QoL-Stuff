@@ -1,0 +1,10 @@
+<p>
+  <input
+    type="radio"
+    [id]="id"
+    name="radio-group"
+    [checked]="checked"
+    (change)="emitValueChange($event)"
+  />
+  <label [for]="id">{{ label }}</label>
+</p>
