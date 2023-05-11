@@ -1,6 +1,7 @@
 {
 	"Ionic Page Template": {
 	  "prefix": "a-ion-page",
+	  "scope": "javascript,typescript",
 	  "body": [
 		"import { CommonModule } from '@angular/common';",
 		"import { Component, OnInit } from '@angular/core';",
