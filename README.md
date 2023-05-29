@@ -183,8 +183,12 @@ https://blog.hubspot.com/website/css-animation-examples
 ```
 # Regex
 
-`/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
+1. `/^[^.]+$|\.(?!(svg)$)([^.]+$)/g` => Filters strings with .svg extension (useful for network tab with dynamically loading svgs for light/dark customization)
+2. `[0-9]+` => Find all numbers in file
+3. `'(.*);` => Find all text between ' and '
+4. `/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/` => Email regex
+5. `console\.log\(([^)]+)\);` => Clear console.log() lines with Find & Replace function
 
-`[0-9]+` => Find all numbers in file
-`'(.*);` => Find all text between ' and '
-`console\.log\(([^)]+)\);` console.log regex
+
+
+
