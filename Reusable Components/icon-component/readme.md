@@ -1,10 +1,10 @@
 # svg folder to exportable constant - USABE
 
-1. Put script in root folder.
-2. Create directory root_folder/src/assets/svgs/ and add your svgs there.
-3. Create icons.ts in root_folder/src/app/shared/icon.ts
+1. Put script in `root` folder.
+2. Create directory `root_folder/src/assets/svgs/` and add your svgs there.
+3. Create `icons.ts` in `root_folder/src/app/shared/icon.ts`
 
-THEN run the script using node assets-generator-json.js.
+THEN run the script using `node assets-generator-json.js`.
 
 It will generate an exprotable object with key:value being <filename_of_the_svg> : <the_raw_html_of_svg>
 
