@@ -1,4 +1,4 @@
-# Usage
+# svg folder to exportable constant - USABE
 
 1. Put script in root folder.
 2. Create directory root_folder/src/assets/svgs/ and add your svgs there.
