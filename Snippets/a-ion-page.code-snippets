@@ -9,7 +9,7 @@
 		"import { Subject } from 'rxjs';",
 		"",
 		"@Component({",
-		"  selector: '$1',",
+		"  selector: 'app-${1}',",
 		"  templateUrl: '${2:page}.page.html',",
 		"  standalone: true,",
 		"  imports: [IonicModule, CommonModule],",
