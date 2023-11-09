@@ -20,7 +20,6 @@ interface IconPartColoring {
    selector: "app-icon",
    templateUrl: "icon.component.html",
    standalone: true,
-   imports: [BypassHTMLPipe],
 })
 export class IconComponent implements OnInit, OnChanges {
    @ViewChild("iconContainer", { static: true }) iconContainer!: {
