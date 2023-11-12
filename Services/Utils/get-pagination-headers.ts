@@ -1,23 +1,29 @@
 import { HttpResponse } from '@angular/common/http';
+interface ResponseData<T> {
+  data: T[];
+  totalPages: number;
+  pageSize: number;
+}
 
-export function getPaginationHeader(response: any) {
-  const headers = {
-    totalPages: +response.headers.get('x-wp-totalpages'),
-    pageSize: +response.headers.get('x-wp-total'),
+interface PaginationHeader {
+  totalPages: number;
+  pageSize: number;
+}
+
+export function getPaginationHeader<T>(response: any): ResponseData<T> {
+  const headers: PaginationHeader = {
+    totalPages: +response.headers.get('total-pages'),
+    pageSize: +response.headers.get('page-size'),
   };
 
-  if (
-    headers.pageSize === null ||
-    headers.pageSize === undefined ||
-    headers.totalPages === null ||
-    headers.totalPages === undefined
-  ) {
+  if (headers.pageSize === null || headers.totalPages === null) {
     throw new Error(
-      'Theres missing header/s ' + JSON.stringify(headers, null, 2)
+      'Theres missing header/s ' + JSON.stringify(headers, null, 2),
     );
   }
+
   return {
-    data: [...response.body],
+    data: [...response.body] as T[],
     ...headers,
   };
 }
