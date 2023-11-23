@@ -1,91 +1,91 @@
 <div class="h-screen">
-  <div
-    [ngClass]="{ 'lg:!opacity-0': !showControls && !isMobile }"
-    class="absolute top-0 right-0 !z-50 flex w-screen gap-4 bg-black py-3 px-4 transition-all duration-500"
-  >
-    <span class="text-white">{{ currentSlide }}/{{ totalSlides }}</span>
-    <div class="ml-auto flex flex-row gap-2">
-      <a
-        target="_blank"
-        [href]="currentRedirectUrl"
-        *ngIf="currentRedirectUrl"
-        class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
-      >
-        <span
-          class="iconify text-white"
-          data-icon="ph:link"
-          data-width="20"
-          data-height="20"
-        ></span>
-      </a>
+   <div
+      [ngClass]="{ 'lg:!opacity-0': !showControls && !isMobile }"
+      class="absolute top-0 right-0 !z-50 flex w-screen gap-4 bg-black py-3 px-4 transition-all duration-500"
+   >
+      <span class="text-white">{{ currentSlide }}/{{ totalSlides }}</span>
+      <div class="ml-auto flex flex-row gap-2">
+         <a
+            target="_blank"
+            [href]="currentRedirectUrl"
+            *ngIf="currentRedirectUrl"
+            class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
+         >
+            <span
+               class="iconify text-white"
+               data-icon="ph:link"
+               data-width="20"
+               data-height="20"
+            ></span>
+         </a>
 
-      <button
-        class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
-        (click)="zoomInOut()"
-      >
-        <span
-          class="iconify text-white"
-          data-width="20"
-          data-height="20"
-          data-icon="ph:magnifying-glass"
-        ></span>
-      </button>
+         <button
+            class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
+            (click)="zoomInOut()"
+         >
+            <span
+               class="iconify text-white"
+               data-width="20"
+               data-height="20"
+               data-icon="ph:magnifying-glass"
+            ></span>
+         </button>
 
-      <button
-        class="border-1 flex h-7 w-7 flex-row border-0 border-solid border-neutral-400 p-1 outline-0"
-        (click)="playSwiper()"
-      >
-        <i *ngIf="!isAutoPlaying" [@fadeIn]>
-          <span
-            class="iconify text-white"
-            data-width="20"
-            data-height="20"
-            data-icon="material-symbols:play-arrow-rounded"
-          ></span>
-        </i>
-        <i *ngIf="isAutoPlaying" [@fadeIn]>
-          <span
-            *ngIf="isAutoPlaying"
-            data-width="20"
-            data-height="20"
-            class="iconify text-white"
-            data-icon="ic:round-pause"
-          ></span>
-        </i>
-      </button>
-      <button
-        class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
-        (click)="dialog.close()"
-      >
-        <span
-          class="iconify text-white"
-          data-width="20"
-          data-height="20"
-          data-icon="akar-icons:cross"
-        ></span>
-      </button>
-    </div>
-  </div>
-  <swiper
-    (zoomChange)="zoomChange($event)"
-    (slideChange)="slideChange($event)"
-    [config]="config"
-    #swiper
-    class="!z-40 h-full w-full bg-black bg-opacity-[85%]"
-  >
-    <ng-template swiperSlide *ngFor="let item of data.images">
-      <div
-        class="swiper-zoom-container flex h-screen w-screen items-center justify-center lg:p-5"
-      >
-        <img
-          [ngClass]="{
-            'cursor-zoom-in': !isZoomedIn,
-            'cursor-zoom-out': isZoomedIn
-          }"
-          class="select-none object-contain transition-all duration-500 lg:max-h-[80vh]"
-          [src]="baseUrl + item.imageUrl"
-        />
+         <button
+            class="border-1 flex h-7 w-7 flex-row border-0 border-solid border-neutral-400 p-1 outline-0"
+            (click)="playSwiper()"
+         >
+            <i *ngIf="!isAutoPlaying" [@fadeIn]>
+               <span
+                  class="iconify text-white"
+                  data-width="20"
+                  data-height="20"
+                  data-icon="material-symbols:play-arrow-rounded"
+               ></span>
+            </i>
+            <i *ngIf="isAutoPlaying" [@fadeIn]>
+               <span
+                  *ngIf="isAutoPlaying"
+                  data-width="20"
+                  data-height="20"
+                  class="iconify text-white"
+                  data-icon="ic:round-pause"
+               ></span>
+            </i>
+         </button>
+         <button
+            class="border-1 border-0 border-solid border-neutral-400 p-1 outline-0"
+            (click)="dialog.close()"
+         >
+            <span
+               class="iconify text-white"
+               data-width="20"
+               data-height="20"
+               data-icon="akar-icons:cross"
+            ></span>
+         </button>
       </div>
-    </ng-template>
-  </swiper>
+   </div>
+   <swiper
+      (zoomChange)="zoomChange($event)"
+      (slideChange)="slideChange($event)"
+      [config]="config"
+      #swiper
+      class="!z-40 h-full w-full bg-black bg-opacity-[85%]"
+   >
+      <ng-template swiperSlide *ngFor="let item of data.images">
+         <div
+            class="swiper-zoom-container flex h-screen w-screen items-center justify-center lg:p-5"
+         >
+            <img
+               [ngClass]="{
+                  'cursor-zoom-in': !isZoomedIn,
+                  'cursor-zoom-out': isZoomedIn
+               }"
+               class="select-none object-contain transition-all duration-500 lg:max-h-[80vh]"
+               [src]="item.imageUrl"
+            />
+         </div>
+      </ng-template>
+   </swiper>
 </div>
