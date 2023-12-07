@@ -8,7 +8,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, tap, throwError } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
@@ -51,7 +51,7 @@ export class NotAuthenticatedInterceptor {
             console.log(`Unauthorized access of ${req.url}`);
           }
         }
-        return of(event);
+        return throwError(() => event);
       }),
     );
   }
