@@ -27,7 +27,7 @@ export class IconComponent implements OnInit, OnChanges {
    }
    @Input() width!: string
    @Input() height!: string
-   @Input() name: string = ""
+   @Input({ required: true }) name!: IconKey;
    @Input() color!: string
    @Input() parts!: IconPartColoring[]
    constructor(private renderer: Renderer2) {}
