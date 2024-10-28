@@ -4,7 +4,7 @@
 2. Create directory `root_folder/src/assets/svgs/` and add your svgs there.
 3. Create `icons.ts` in `root_folder/src/app/shared/icon.ts`
 
-THEN run the script using `node assets-generator-json.js`.
+THEN in `package.json` add the script  `node assets-json-generator.js` and set `"type": "module"`.
 
 It will generate an exprotable object with key:value being <filename_of_the_svg> : <the_raw_html_of_svg>
 
