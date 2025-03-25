@@ -189,6 +189,15 @@ https://blog.hubspot.com/website/css-animation-examples
 4. `/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,}$/` => Email regex
 5. `console\.log\(([^)]+)\);` => Clear console.log() lines with Find & Replace function
 
+# Gradle APK dynamic name
+
+## build.gradle(:app) // at the bottom of the file
+```
+def date = new Date();
+def formattedDate = date.format('yyyy-MM-dd-HH-mm')
+setProperty("archivesBaseName", "eques_"+formattedDate)
+```
+
 
 
 
