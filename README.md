@@ -195,7 +195,7 @@ https://blog.hubspot.com/website/css-animation-examples
 ```
 def date = new Date();
 def formattedDate = date.format('yyyy-MM-dd-HH-mm')
-setProperty("archivesBaseName", "eques_"+formattedDate)
+setProperty("archivesBaseName", "MY_APP_NAME_"+formattedDate)
 ```
 
 
