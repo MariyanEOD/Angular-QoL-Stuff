@@ -199,7 +199,7 @@ setProperty("archivesBaseName", "MY_APP_NAME_"+formattedDate)
 ```
 ## Automatic signing of build
 Gradle Scripts => build.gradle(Module: app)
-```    signingConfigs {
+```signingConfigs {
              .....
         debug {
             keyAlias 'chasbg'
@@ -213,7 +213,8 @@ Gradle Scripts => build.gradle(Module: app)
             storeFile file('D:\\DEV\\github\\chas-bg\\mobile\\chasbg.keystore') // This must be adjusted everytime if the path is different
             storePassword 'chasbg'
         }
-    }```
+    }
+```
 
 
 
