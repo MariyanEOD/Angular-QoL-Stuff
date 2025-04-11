@@ -191,7 +191,8 @@ https://blog.hubspot.com/website/css-animation-examples
 
 # Gradle APK dynamic name
 
-## build.gradle(:app) // at the bottom of the file
+## Automatic name changing using the current date
+Gradle Scripts => build.gradle(Module: app)
 ```
 def date = new Date();
 def formattedDate = date.format('yyyy-MM-dd-HH-mm')
@@ -203,16 +204,16 @@ Gradle Scripts => build.gradle(Module: app)
 signingConfigs {
         ...the rest of the code here
         debug {
-            keyAlias 'chasbg'
-            keyPassword 'chasbg'
-            storeFile file('D:\\DEV\\github\\chas-bg\\mobile\\chasbg.keystore') // This must be adjusted everytime if the path is different
-            storePassword 'chasbg'
+            keyAlias '---'
+            keyPassword '---'
+            storeFile file('D:\\.....\\KEYSTORENAME.keystore') // This must be adjusted everytime if the path is different
+            storePassword '---'
         }
         release {
-            keyAlias 'chasbg'
-            keyPassword 'chasbg'
-            storeFile file('D:\\DEV\\github\\chas-bg\\mobile\\chasbg.keystore') // This must be adjusted everytime if the path is different
-            storePassword 'chasbg'
+            keyAlias '---'
+            keyPassword '---'
+            storeFile file('D:\\....\\KEYSTORENAME.keystore') // This must be adjusted everytime if the path is different
+            storePassword '---'
         }
     }
 ```
