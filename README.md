@@ -197,7 +197,23 @@ def date = new Date();
 def formattedDate = date.format('yyyy-MM-dd-HH-mm')
 setProperty("archivesBaseName", "MY_APP_NAME_"+formattedDate)
 ```
-
+## Automatic signing of build
+Gradle Scripts => build.gradle(Module: app)
+```    signingConfigs {
+             .....
+        debug {
+            keyAlias 'chasbg'
+            keyPassword 'chasbg'
+            storeFile file('D:\\DEV\\github\\chas-bg\\mobile\\chasbg.keystore') // This must be adjusted everytime if the path is different
+            storePassword 'chasbg'
+        }
+        release {
+            keyAlias 'chasbg'
+            keyPassword 'chasbg'
+            storeFile file('D:\\DEV\\github\\chas-bg\\mobile\\chasbg.keystore') // This must be adjusted everytime if the path is different
+            storePassword 'chasbg'
+        }
+    }```
 
 
 
