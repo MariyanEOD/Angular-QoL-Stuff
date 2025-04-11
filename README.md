@@ -199,8 +199,9 @@ setProperty("archivesBaseName", "MY_APP_NAME_"+formattedDate)
 ```
 ## Automatic signing of build
 Gradle Scripts => build.gradle(Module: app)
-```signingConfigs {
-             .....
+```
+signingConfigs {
+        ...the rest of the code here
         debug {
             keyAlias 'chasbg'
             keyPassword 'chasbg'
